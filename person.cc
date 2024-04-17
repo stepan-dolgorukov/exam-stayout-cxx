@@ -49,3 +49,12 @@ person::number_phone( void ) const
 {
   return _number_phone;
 }
+
+bool
+person::operator==( const person& p )
+{
+  return
+    name() == p.name() &&
+    surname() == p.surname() &&
+    number_phone() == p.number_phone();
+}
