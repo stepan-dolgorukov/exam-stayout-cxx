@@ -21,6 +21,17 @@ private:
     return s;
   }
 
+  template< typename stream_input >
+  friend stream_input&
+  operator>>( stream_input& s, person& p )
+  {
+    s >> p._name >> p._surname >> p._number_phone;
+
+    // Удаление «:».
+    p._surname.erase( p._surname.end() - 1 );
+    return s;
+  }
+
 public:
 
   person( void ) = default;
