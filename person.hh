@@ -23,7 +23,7 @@ private:
 
 public:
 
-  person( void ) = delete;
+  person( void ) = default;
 
   person( std::string_view name,
           std::string_view surname,
