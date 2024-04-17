@@ -36,6 +36,9 @@ public:
 
   bool
   operator==( const person& p );
+
+  person&
+  operator=( const person& p );
 };
 
 #endif
