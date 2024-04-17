@@ -58,3 +58,13 @@ person::operator==( const person& p )
     surname() == p.surname() &&
     number_phone() == p.number_phone();
 }
+
+person&
+person::operator=( const person& p )
+{
+  _name = p.name();
+  _surname = p.surname();
+  _number_phone = p.number_phone();
+
+  return *this;
+}
