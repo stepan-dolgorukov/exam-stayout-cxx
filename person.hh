@@ -35,7 +35,7 @@ public:
   number_phone( void ) const;
 
   bool
-  operator==( const person& p );
+  operator==( const person& p ) const;
 
   person&
   operator=( const person& p );

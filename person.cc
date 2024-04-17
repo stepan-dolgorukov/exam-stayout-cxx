@@ -51,7 +51,7 @@ person::number_phone( void ) const
 }
 
 bool
-person::operator==( const person& p )
+person::operator==( const person& p ) const
 {
   return
     name() == p.name() &&
