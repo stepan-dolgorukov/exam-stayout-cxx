@@ -27,7 +27,7 @@ person::person( person&& p )
 
   : _name{ std::move( p._name ) },
     _surname{ std::move( p._surname ) },
-    _number_phone{ std::move( p._surname) }
+    _number_phone{ std::move( p._number_phone ) }
 {
 
 }
