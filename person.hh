@@ -13,6 +13,14 @@ private:
     _surname{},
     _number_phone{};
 
+  template< typename stream_output >
+  friend stream_output&
+  operator<<( stream_output& s, const person& p )
+  {
+    s << p.name(  ) << ' ' << p.surname(  ) << ' ' << p.number_phone(  );
+    return s;
+  }
+
 public:
 
   person( void ) = delete;
