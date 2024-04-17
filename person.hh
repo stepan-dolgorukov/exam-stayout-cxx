@@ -33,6 +33,9 @@ public:
 
   std::string
   number_phone( void ) const;
+
+  bool
+  operator==( const person& p );
 };
 
 #endif
