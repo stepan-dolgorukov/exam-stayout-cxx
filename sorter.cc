@@ -13,6 +13,11 @@ sorter::sorter( const std::vector< person >& persons )
 std::vector<person>
 sorter::operator()( key_sort k ) const
 {
+  if( k == key_sort::NONE )
+  {
+    return _persons;
+  }
+
   std::vector
     answer{ _persons };
 
