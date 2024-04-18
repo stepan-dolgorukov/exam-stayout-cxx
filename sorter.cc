@@ -49,7 +49,21 @@ sorter::comparator( key_sort key )
         []( const person& left,
             const person& right )
         {
-          return left.number_phone() < right.number_phone();
+          const auto
+            number_phone_left{ left.number_phone() },
+            number_phone_right{ right.number_phone() };
+
+          if( number_phone_left.size() == number_phone_right.size() )
+          {
+            return number_phone_left <= number_phone_right;
+          }
+
+          if ( number_phone_left.size() < number_phone_right.size() )
+          {
+            return true;
+          }
+
+          return false;
         };
   }
 
