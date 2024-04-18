@@ -25,8 +25,13 @@ main( void )
       break;
 
     default:
-      std::cerr << "Недопустимое значение номера колонки.\n";
-      return 1;
+      key_sort = key_sort::NONE;
+  }
+
+  if( key_sort::NONE == key_sort )
+  {
+    std::cerr << "Недопустимое значение номера колонки.\n";
+    return 1;
   }
 
   for( person p; std::cin >> p; )
