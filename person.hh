@@ -25,10 +25,10 @@ private:
   friend stream_input&
   operator>>( stream_input& s, person& p )
   {
-    s >> p._name >> p._surname >> p._number_phone;
+    s >> p._surname >> p._name >> p._number_phone;
 
     // Удаление «:».
-    p._surname.erase( p._surname.end() - 1 );
+    p._name.erase( p._name.end() - 1 );
     return s;
   }
 
