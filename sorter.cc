@@ -16,9 +16,9 @@ sorter::operator()( key_sort k )
   std::vector
     answer{ _persons };
 
-  std::sort( answer.begin(  ),
-             answer.end(  ),
-             comparator( k )   );
+  std::stable_sort( answer.begin(  ),
+                    answer.end(  ),
+                    comparator( k )   );
 
   return answer;
 }
