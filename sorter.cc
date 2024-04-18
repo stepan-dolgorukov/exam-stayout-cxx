@@ -24,7 +24,7 @@ sorter::operator()( key_sort k )
 }
 
 std::function<bool(person, person)>
-sorter::comparator( key_sort key )
+sorter::comparator( key_sort key ) const
 {
   switch( key )
   {

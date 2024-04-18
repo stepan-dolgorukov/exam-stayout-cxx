@@ -14,7 +14,7 @@ private:
   std::vector< person > _persons{};
 
   std::function< bool( person, person ) >
-  comparator( key_sort key );
+  comparator( key_sort key ) const;
 
 public:
 
