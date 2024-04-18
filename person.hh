@@ -15,7 +15,7 @@ private:
     _surname{},
     _number_phone{};
 
-  key_sort _key_output{ key_sort::NONE };
+  mutable key_sort _key_output{ key_sort::NONE };
 
   template< typename stream_output >
   friend stream_output&
@@ -89,7 +89,7 @@ public:
   number_phone( void ) const;
 
   void
-  key_output( key_sort k );
+  key_output( key_sort k ) const;
 
   bool
   operator==( const person& p ) const;

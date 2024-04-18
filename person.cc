@@ -51,7 +51,7 @@ person::number_phone( void ) const
 }
 
 void
-person::key_output( key_sort k )
+person::key_output( key_sort k ) const
 {
   _key_output = k;
 }
