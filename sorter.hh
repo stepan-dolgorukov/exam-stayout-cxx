@@ -23,7 +23,7 @@ public:
   sorter( const std::vector< person >& persons );
 
   std::vector<person>
-  operator()( key_sort k );
+  operator()( key_sort k ) const;
 };
 
 #endif

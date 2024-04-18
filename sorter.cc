@@ -11,7 +11,7 @@ sorter::sorter( const std::vector< person >& persons )
 }
 
 std::vector<person>
-sorter::operator()( key_sort k )
+sorter::operator()( key_sort k ) const
 {
   std::vector
     answer{ _persons };
