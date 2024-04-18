@@ -4,6 +4,8 @@
 #include <string>
 #include <string_view>
 
+#include "key_sort.hh"
+
 class person
 {
 private:
@@ -13,11 +15,44 @@ private:
     _surname{},
     _number_phone{};
 
+  key_sort _key_output{ key_sort::NONE };
+
   template< typename stream_output >
   friend stream_output&
   operator<<( stream_output& s, const person& p )
   {
-    s << p.name(  ) << ' ' << p.surname(  ) << ' ' << p.number_phone(  );
+    if( p._key_output == key_sort::NAME )
+    {
+      s <<
+        p.name(  ) << ' ' <<
+        p.surname(  ) << ": " <<
+        p.number_phone(  );
+    }
+
+    else if( p._key_output == key_sort::SURNAME )
+    {
+      s <<
+        p.surname(  ) << ' ' <<
+        p.name(  ) << ": " <<
+        p.number_phone(  );
+    }
+
+    else if( p._key_output == key_sort::NUMBER_PHONE )
+    {
+      s <<
+        p.number_phone(  ) << ": " <<
+        p.surname(  ) << ' ' <<
+        p.name(  );
+    }
+
+    else
+    {
+      s <<
+        p.name(  ) << ' ' <<
+        p.surname(  ) << ' ' <<
+        p.number_phone(  );
+    }
+
     return s;
   }
 
@@ -52,6 +87,9 @@ public:
 
   std::string
   number_phone( void ) const;
+
+  void
+  key_output( key_sort k );
 
   bool
   operator==( const person& p ) const;

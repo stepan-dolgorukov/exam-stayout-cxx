@@ -50,6 +50,12 @@ person::number_phone( void ) const
   return _number_phone;
 }
 
+void
+person::key_output( key_sort k )
+{
+  _key_output = k;
+}
+
 bool
 person::operator==( const person& p ) const
 {
