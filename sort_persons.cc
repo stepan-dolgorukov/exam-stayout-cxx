@@ -37,7 +37,7 @@ main( void )
   const sorter s{ persons };
   const std::vector< person > persons_sorted{ s.operator()( key_sort ) };
 
-  for( auto& p : persons_sorted )
+  for( const auto& p : persons_sorted )
   {
     p.key_output( key_sort );
     std::cout << p << '\n';
